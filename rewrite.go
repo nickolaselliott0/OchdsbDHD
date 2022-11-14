@@ -3,7 +3,6 @@ package command
 import (
 	"strings"
 
-	"github.com/rqlite/sql"
 )
 
 // Rewrite rewrites the statements such that RANDOM is rewritten,
@@ -27,8 +26,7 @@ func Rewrite(stmts []*Statement, r bool) error {
 			continue
 		}
 		s, f, err := rw.Do(s)
-		if err != nil || !f {
-			continue
+		if err != nil || !f 
 		}
 
 		stmts[i].Sql = s.String()
